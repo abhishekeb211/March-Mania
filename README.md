@@ -28,6 +28,7 @@ ID,Pred
 
 | Section | Description |
 |---------|-------------|
+| 0. Kaggle Setup | Install `kaggle` package, download & extract competition CSV files |
 | 1. Configuration | `DATA_DIR`, season constants, library imports |
 | 2. Data Loading | All competition CSV files with schema overview |
 | 3. EDA | Score distributions, seeding upset analysis |
@@ -42,15 +43,27 @@ ID,Pred
 
 ## Quick Start
 
-```bash
-pip install numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm
-jupyter notebook march_mania_2026.ipynb
-```
+### Option A – Automatic download via Kaggle API (recommended)
 
-Set `DATA_DIR` in the first cell to point to the competition data:
+1. Install dependencies:
+   ```bash
+   pip install kaggle numpy pandas matplotlib seaborn scikit-learn xgboost lightgbm
+   ```
+2. Set up Kaggle credentials:
+   - Go to https://www.kaggle.com/settings → Account → API → **Create New Token**
+   - Save the downloaded `kaggle.json` to `~/.kaggle/kaggle.json` (Linux/Mac) or `%USERPROFILE%\.kaggle\kaggle.json` (Windows)
+   - Accept the competition rules at https://www.kaggle.com/competitions/march-machine-learning-mania-2026
+3. Open and run the notebook – **Section 0** will install `kaggle` and download all CSVs automatically:
+   ```bash
+   jupyter notebook march_mania_2026.ipynb
+   ```
+
+### Option B – Manual download
+
+Download the data manually from the competition page and set `DATA_DIR` in Section 1:
 
 ```python
-DATA_DIR = '/kaggle/input/march-machine-learning-mania-2026'
+DATA_DIR = '/path/to/march-machine-learning-mania-2026'
 ```
 
 ---
